@@ -17,7 +17,7 @@ class Offsets:
         m_vOldOrigin = client["client.dll"]["classes"]["C_BasePlayerPawn"]["fields"]["m_vOldOrigin"]
         m_pGameSceneNode = client["client.dll"]["classes"]["C_BaseEntity"]["fields"]["m_pGameSceneNode"]
         m_hPlayerPawn = client["client.dll"]["classes"]["CCSPlayerController"]["fields"]["m_hPlayerPawn"]
-        m_iIDEntIndex = client["client.dll"]["classes"]["C_CSPlayerPawnBase"]["fields"]["m_iIDEntIndex"]
+        m_iIDEntIndex = client["client.dll"]["classes"]["C_CSPlayerPawn"]["fields"]["m_iIDEntIndex"]
         m_vecViewOffset = client["client.dll"]["classes"]["C_BaseModelEntity"]["fields"]["m_vecViewOffset"]
     except:
         exit("Error: Invalid offsets, wait for an update")

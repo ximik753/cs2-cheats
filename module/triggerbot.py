@@ -26,7 +26,7 @@ class TriggerBot:
             if entityId > 0:
                 entList = pm.r_uint64(self.process, self.module + Offsets.dwEntityList)
                 entEntry = pm.r_uint64(self.process, entList + 0x8 * (entityId >> 9) + 0x10)
-                entity = pm.r_uint64(self.process, entEntry + 120 * (entityId & 0x1FF))
+                entity = pm.r_uint64(self.process, entEntry + 112 * (entityId & 0x1FF))
                 entityTeam = pm.r_int(self.process, entity + Offsets.m_iTeamNum)
                 playerTeam = pm.r_int(self.process, player + Offsets.m_iTeamNum)
                 entityHp = pm.r_int(self.process, entity + Offsets.m_iHealth)

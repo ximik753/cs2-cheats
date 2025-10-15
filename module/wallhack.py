@@ -16,7 +16,7 @@ class WallHack:
         for _ in range(1, 65):
             try:
                 entryPointer = pm.r_int64(self.process, entityList + (8 * (_ & 0x7FFF) >> 9) + 16)
-                controllerPointer = pm.r_int64(self.process, entryPointer + 120 * (_ & 0x1FF))
+                controllerPointer = pm.r_int64(self.process, entryPointer + 112 * (_ & 0x1FF))
 
                 if controllerPointer == localPlayer:
                     continue
@@ -24,7 +24,7 @@ class WallHack:
                 controllerPawnPointer = pm.r_int64(self.process, controllerPointer + Offsets.m_hPlayerPawn)
                 listEntityPointer = pm.r_int64(self.process,
                                                entityList + 0x8 * ((controllerPawnPointer & 0x7FFF) >> 9) + 16)
-                pawnPointer = pm.r_int64(self.process, listEntityPointer + 120 * (controllerPawnPointer & 0x1FF))
+                pawnPointer = pm.r_int64(self.process, listEntityPointer + 112 * (controllerPawnPointer & 0x1FF))
             except:
                 continue
 
